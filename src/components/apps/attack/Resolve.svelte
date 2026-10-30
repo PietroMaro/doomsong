@@ -22,10 +22,9 @@
         let coin = message?.doomsong.coin_result;
         let table = resultTables()[flow.attack.type] ?? FALLBACK_RESULT_TABLE;
         
-        // Estraiamo isHeavy dalla formula del dado
         let formula = message?.rolls[0].formula ?? "";
         let isHeavy = formula.includes("kh1");
-        let isLarger = false; // Da implementare in futuro confrontando le taglie
+        let isLarger = false; 
 
         return table.resultFor(roll_result, flow.final_target, coin, isHeavy, isLarger); 
     });
